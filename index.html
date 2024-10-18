@@ -60,13 +60,13 @@
                 <!--*******************************************************************************************-->
                 <!-- también esta llama a préstamos. EJERCICIO 0.1 Cambiar ref="#" por el evento correspondiente-->
                 <!--*******************************************************************************************-->
-                <a class="nav-link btn" ref="#">Préstamos</a>
+                <a class="nav-link btn" onclick="prestamosNav()">Préstamos</a>
               </li>
               <li class="nav-item">
                 <!--****************************************************************************************************-->
                 <!-- también esta llama a la lista de socios.EJERCICIO 0.2 Cambiar ref="#" por el evento correspondiente-->
                 <!--****************************************************************************************************-->
-                <a class="nav-link btn" ref="#">Socios</a>
+                <a class="nav-link btn" onclick="sociosNav()">Socios</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link disabled" aria-disabled="true">Actividades</a
@@ -85,20 +85,20 @@
      *************************************************************************
      EJERCICIO 0.3 Convierte este div en el contenedor principal
      ************************************************************************* -->
-    <div class="">
+    <div class="container">
       <!-- *******************************************************************************************************
        EJERCICIO 0.4 Este div es una fila que contiene dos columnas, una con el texto y botones, otra con la imágen
        ************************************************************************************************************-->
-      <div class="text-center m-1 h-100">
+      <div class="row text-center m-1 h-100">
         <!-- ************************************************************************************
         EJERCICIO 0.5 Este div ocupa la mitad del espacio a lo ancho (una columna de dos)
         ***************************************************************************************** -->
-        <div class="mt-5 p-5" id="texto">
+        <div class="col-6 mt-5 p-5" id="contenidoListas">
           <!-- *********************************************************************************************
             EJERCICIO 0.6 Utiliza un elemento span para poner la palabra biblioteca de color verde (green)
             ********************************************************************************************* -->
-          <h1 class="mt-5">Una biblioteca para leer todos los libros</h1>
-          <p class="mt-2 p-2 text-md-start">
+          <h1 class="mt-5">Una <span style="color: green;">biblioteca</span> para leer todos los libros</h1>
+          <p id="texto" class="mt-2 p-2 text-md-start">
             Nuestra biblioteca dispone de más de 10.000 títulos de todas las
             categorías y edades, para que la lectura se convierta en un hábito
             regular y puedas disfrutar como lo hacemos nosotros.
@@ -106,13 +106,13 @@
           <!-- *********************************************************************************************
            EJERCICIO 0.7 Este div es un contenedor para el gris donde colocaré los botones, tendrá una fila y dos columnas
            *********************************************************************************************-->
-          <div class="mt-4 pt-2">
+          <div class="container mt-4 pt-2">
             <!-- Esta es la fila (yo he puesto sólo una) -->
-            <div class="pt-5">
+            <div class="row pt-5">
               <!--********************************************************************************************
                EJERCICIO 0.8 Botón para llamar a cargar los préstamos, configura el evento correspondiente
                ********************************************************************************************-->
-              <div class="col-lg-4 offset-1 my-3 p-2 btn btn-outline-dark">
+              <div onclick="prestamos()" class="col-lg-4 offset-1 my-3 p-2 btn btn-outline-dark">
                 <!-- icono del botón -->
                 <i class="bi bi-book-fill me-1"></i>
                 Préstamos
@@ -134,10 +134,7 @@
               <!--****************************************************************************************** 
                EJERCICIO 0.9 Botón para llamar a la lista de socios, configura el evento correspondiente 
                ****************************************************************************************** -->
-              <div
-                class="col-lg-4 offset-1 my-3 p-2 btn btn-outline-secondary"
-                onclick="verSocios()"
-              >
+              <div class="col-lg-4 offset-1 my-3 p-2 btn btn-outline-secondary" onclick="verSocios()">
                 <i class="bi bi-person-fill me-1"></i>
                 ¡Hazte socio!
               </div>
@@ -148,8 +145,8 @@
             RESULTADO DE EJERCICIO: columna de la izquierda, deberá cambiar de foto según llames a socios (userbiblio.jpg) o a préstamos 
             (prestamosbiblio.jpg), deberá cambiarse cada una relacionada con el botón correspondiente
              ========================================================================================================================== -->
-        <div class="col-lg-5 m-2 pt-5" id="imagen">
-          <img src="biblioteca.jpg" alt="Biblioteca" class="w-100" />
+        <div class="col-lg-5 m-2 pt-5" id="contenedorImagen">
+          <img id="imagenInicio" src="biblioteca.jpg" alt="Biblioteca" class="w-100" />
         </div>
       </div>
     </div>
@@ -166,7 +163,7 @@
       ******************************************
       EJERCICIO 1. Enlaza el main.js como módulo 
       ****************************************** 
-    -->
+    --> <script type="module" src="./main.js"></script>
     
   </body>
 </html>
